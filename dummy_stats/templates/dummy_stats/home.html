@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Hello</p>
+
+<div id="placeholder" style="width:600px;height:300px;"></div>
+
+<script type="text/javascript">
+$(function () {
+    var this_week = {{ requests.this_week }};
+    var this_week_unique = {{ requests.this_week_unique }};
+
+    $.plot($("#placeholder"), [this_week, this_week_unique]);
+});
+</script>
+{% endblock %}
